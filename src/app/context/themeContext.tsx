@@ -10,7 +10,7 @@ import {
 
 const ThemeContext = createContext({
   isDarkTheme: true,
-  themeTitle: "DARK",
+  themeTitle: "LIGHT",
   toggleThemeHandler: () => {},
 });
 
@@ -23,7 +23,7 @@ export function ThemeContextProvider(props: ThemePropsInterface): ReactElement {
   useEffect(() => initialThemeHandler());
 
   const themeTitle = useMemo(() => {
-    return isDarkTheme ? "DARK" : "LIGHT";
+    return isDarkTheme ? "LIGHT" : "DARK";
   }, [isDarkTheme]);
 
   function isLocalStorageEmpty(): boolean {

@@ -5,7 +5,7 @@ import Input from "./Input";
 
 const Searchbar = () => {
   return (
-    <div className="flex bg-white rounded-[15px] gap-x-2 pl-4 md:pl-8 pr-2 py-2 items-center shadow-normal">
+    <div className="flex bg-white dark:bg-deepblue rounded-[15px] gap-x-2 pl-4 md:pl-8 pr-2 py-2 items-center shadow-normal dark:shadow-none">
       <Image
         src={SearchIcon}
         alt="icon-search"

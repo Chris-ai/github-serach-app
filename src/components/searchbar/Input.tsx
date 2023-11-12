@@ -11,14 +11,14 @@ const Input: React.FC = () => {
   };
 
   return (
-    <div className="flex w-full relative">
+    <div className="flex w-full relative dark:bg-deepblue">
       <input
         onChange={handleOnChange}
         type="text"
         placeholder="Search GitHub username..."
-        className="text-[13px] md:text-[18px] flex-1 text-steelblue outline-none cursor-pointer"
+        className="text-[13px] md:text-[18px] dark:text-white dark:placeholder:text-white flex-1 text-steelblue outline-none cursor-pointer dark:bg-deepblue"
       />
-      <div className="absolute right-0 text-error text-[13px] md:text-[15px] font-bold bg-white px-1">
+      <div className="absolute right-0 text-error text-[13px] md:text-[15px] font-bold bg-white dark:bg-deepblue px-1">
         {errorMessage}
       </div>
     </div>

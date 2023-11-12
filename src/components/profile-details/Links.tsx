@@ -49,7 +49,7 @@ const CustomLink: React.FC<CustomLinkProps> = ({
       </div>
       <Link
         className={classNames(
-          "text-steelblue text-[13px] md:text-[15px] break-all",
+          "text-steelblue dark:text-white text-[13px] md:text-[15px] break-all",
           `${isActive ? "hover:underline" : "cursor-default"}`
         )}
         href={href}

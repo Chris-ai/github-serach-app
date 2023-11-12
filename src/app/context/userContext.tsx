@@ -55,6 +55,7 @@ export const UserContextProvider = ({
 
   const fetchUserByUsername = async () => {
     try {
+      setIsLoading(true);
       setErrorMessage("");
       const response = await getUser(username);
       if (response.status === 200) {

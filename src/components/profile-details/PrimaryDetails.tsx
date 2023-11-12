@@ -27,11 +27,13 @@ const PrimaryDetails: React.FC<IProps> = ({
         />
       </div>
       <div className="flex flex-col lg:w-full gap-y-1.5 justify-center lg:flex-row lg:justify-between">
-        <div className="flex flex-col">
-          <h3 className="font-bold text-midnightblue md:text-[26px]">{name}</h3>
+        <div className="flex flex-col flex-1 mr-1">
+          <h3 className="font-bold text-midnightblue dark:text-white md:text-[26px] break-words">
+            {name}
+          </h3>
           <p className="text-azure text-[13px] md:text-base">{username}</p>
         </div>
-        <p className="text-bluegray text-[13px] md:text-base">
+        <p className="text-bluegray dark:text-white text-[13px] md:text-base">
           Joined {dayjs(joinDate).format("DD MMM YYYY")}
         </p>
       </div>

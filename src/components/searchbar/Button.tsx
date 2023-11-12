@@ -15,7 +15,7 @@ const Button: React.FC<IProps> = ({ children }) => {
 
   return (
     <button
-      className="bg-azure p-3 rounded-[10px] text-white text-center text-[14px] md:text-base font-bold lg:px-6 hover:bg-buttonHover"
+      className="bg-azure p-3 rounded-[10px] text-white text-center text-[14px] md:text-base font-bold lg:px-6 hover:bg-buttonHover disabled:opacity-30"
       onClick={handleClick}
       disabled={isLoading}
     >

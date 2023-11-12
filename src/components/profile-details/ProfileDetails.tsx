@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import PrimaryDetails from "./PrimaryDetails";
 import CodeInfo from "./CodeInfo";
 import Links from "./Links";
@@ -14,7 +14,7 @@ const ProfileDetails: React.FC = () => {
   const { githubUser, isLoading } = useUserContext();
 
   return (
-    <div className="px-6 md:px-12 pt-8 md:pt-[2.75rem] pb-12 bg-white rounded-[15px] flex flex-col gap-y-6 lg:flex-row lg:gap-x-9 shadow-normal">
+    <div className="px-6 md:px-12 pt-8 md:pt-[2.75rem] pb-12 bg-white dark:bg-deepblue rounded-[15px] flex flex-col gap-y-6 lg:flex-row lg:gap-x-9 shadow-normal dark:shadow-none">
       <>
         <div className="hidden lg:flex">
           <Skeleton
@@ -47,7 +47,7 @@ const ProfileDetails: React.FC = () => {
           </Skeleton>
 
           <Skeleton isLoading={isLoading} className="p-4">
-            <p className="text-steelblue text-[13px] md:text-[15px]">
+            <p className="text-steelblue dark:text-white text-[13px] md:text-[15px]">
               {githubUser?.bio}
             </p>
           </Skeleton>

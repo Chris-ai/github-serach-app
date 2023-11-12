@@ -20,6 +20,8 @@ const config: Config = {
         deepblue: "#1E2A47",
         buttonHover: "#60ABFF",
         error: "#F74646",
+        hoverDark: "#222731",
+        hoverLight: "#90A4D4",
       },
       boxShadow: {
         normal: "0px 16px 30px -10px rgba(70, 96, 187, 0.20)",
