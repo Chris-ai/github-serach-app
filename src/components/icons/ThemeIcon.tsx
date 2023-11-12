@@ -1,11 +1,5 @@
-"use client";
-
-import React, { useEffect } from "react";
-
 interface IProps {
-  // isDarkTheme: boolean;
   className?: string;
-  // themeTitle: string;
 }
 
 const ThemeIcon: React.FC<IProps> = ({ className }) => {

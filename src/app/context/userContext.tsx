@@ -2,6 +2,7 @@
 
 import { GithubUser } from "@/model/types";
 import { getUser } from "@/service/user";
+import { DEFAULT_GITHUB_USERNAME } from "@/utils/types";
 import {
   createContext,
   useContext,
@@ -10,7 +11,6 @@ import {
   useState,
   useEffect,
 } from "react";
-import { DEFAULT_GITHUB_USERNAME } from "../api/users/route";
 
 interface UserContextProps {
   username: string;

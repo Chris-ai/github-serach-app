@@ -1,14 +1,8 @@
+import { DEFAULT_GITHUB_USERNAME, ERROR_TYPE } from "@/utils/types";
 import { NextRequest, NextResponse } from "next/server";
 import { Octokit, RequestError } from "octokit";
 
 const octokit = new Octokit({ auth: process.env.NEXT_PUBLIC_GITHUB_TOKEN });
-
-export const DEFAULT_GITHUB_USERNAME = "chris-ai";
-
-export enum ERROR_TYPE {
-  NOT_FOUND = "User Not Found",
-  UNKNOWN = "Unknown Error",
-}
 
 export async function GET(req: NextRequest) {
   const username: string =
