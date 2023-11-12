@@ -22,7 +22,6 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ data: response.data }, { status: 200 });
   } catch (error) {
     if (error instanceof RequestError) {
-      console.log("some error occured", error);
       if (error.status === 404) {
         return NextResponse.json(
           { message: ERROR_TYPE.NOT_FOUND },
