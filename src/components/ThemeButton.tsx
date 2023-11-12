@@ -1,19 +1,19 @@
 "use client";
 
 import Image from "next/image";
-import React from "react";
+import React, { useContext } from "react";
 import IconMoon from "@/assets/icon-moon.svg";
-import { useDarkMode } from "usehooks-ts";
+import { useThemeContext } from "@/app/context/themeContext";
 
 const ThemeButton = () => {
-  const { isDarkMode, toggle } = useDarkMode();
+  const { toggleThemeHandler, themeTitle } = useThemeContext();
 
   return (
     <button
       className="flex gap-x-4 items-center justify-center outline-none bg-transparent"
-      onClick={toggle}
+      onClick={toggleThemeHandler}
     >
-      <p>{isDarkMode ? "LIGHT" : "DARK"}</p>
+      <p>{themeTitle}</p>
       <Image
         src={IconMoon}
         alt="icon-moon"

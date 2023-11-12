@@ -1,29 +1,69 @@
+"use client";
+import React from "react";
 import PrimaryDetails from "./PrimaryDetails";
 import CodeInfo from "./CodeInfo";
 import Links from "./Links";
+import { useUserContext } from "@/app/context/userContext";
+import Image from "next/image";
+import { getGithubUsername } from "@/utils";
+import { Skeleton } from "../Skeleton";
+
+const ImagePlaceholder = "https://avatars.githubusercontent.com/u/583231?v=4";
 
 const ProfileDetails: React.FC = () => {
+  const { githubUser, isLoading } = useUserContext();
+
   return (
-    <div className="px-6 md:px-12 pt-8 md:pt-[2.75rem] pb-12 bg-white rounded-[15px] flex flex-col gap-y-6 lg:flex-row lg:gap-x-9">
-      <div className="hidden lg:flex">
-        <div className="w-[117px] h-[117px] bg-red-100 rounded-full"></div>
-      </div>
-      <div className="flex flex-col gap-y-6">
-        <PrimaryDetails
-          name={"The Name"}
-          username={"@username1"}
-          joinDate={"02-11-2023"}
-        />
+    <div className="px-6 md:px-12 pt-8 md:pt-[2.75rem] pb-12 bg-white rounded-[15px] flex flex-col gap-y-6 lg:flex-row lg:gap-x-9 shadow-normal">
+      <>
+        <div className="hidden lg:flex">
+          <Skeleton
+            isLoading={isLoading}
+            className={"lg:w-[117px] lg:h-[117px] lg:rounded-full"}
+          >
+            <div
+              className={
+                "w-[117px] h-[117px] rounded-full flex items-center justify-center"
+              }
+            >
+              <Image
+                src={githubUser?.avatar_url ?? ImagePlaceholder}
+                alt="avatar"
+                height={120}
+                width={120}
+                className="rounded-full w-full aspect-auto"
+              />
+            </div>
+          </Skeleton>
+        </div>
+        <div className="flex flex-col gap-y-6 w-full">
+          <Skeleton isLoading={isLoading} className="p-6">
+            <PrimaryDetails
+              name={githubUser?.name ?? ""}
+              username={getGithubUsername(githubUser?.login)}
+              joinDate={githubUser?.created_at ?? ""}
+              imgUrl={githubUser?.avatar_url ?? ImagePlaceholder}
+            />
+          </Skeleton>
 
-        <p className="text-steelblue text-[13px] md:text-[15px]">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-          Reprehenderit officiis iste impedit fugiat unde maiores, corporis
-          dignissimos doloremque exercitationem! Odit?{" "}
-        </p>
+          <Skeleton isLoading={isLoading} className="p-4">
+            <p className="text-steelblue text-[13px] md:text-[15px]">
+              {githubUser?.bio}
+            </p>
+          </Skeleton>
 
-        <CodeInfo repos={9} followers={4000} following={13} />
-        <Links />
-      </div>
+          <Skeleton isLoading={isLoading} className="p-10">
+            <CodeInfo
+              repos={githubUser?.public_repos ?? 0}
+              followers={githubUser?.followers ?? 0}
+              following={githubUser?.following ?? 0}
+            />
+          </Skeleton>
+          <Skeleton isLoading={isLoading} className="p-9">
+            <Links />
+          </Skeleton>
+        </div>
+      </>
     </div>
   );
 };

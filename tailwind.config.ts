@@ -18,10 +18,15 @@ const config: Config = {
         offwhite: "#FEFEFE",
         navyblue: "#141D2F",
         deepblue: "#1E2A47",
+        buttonHover: "#60ABFF",
+        error: "#F74646",
+      },
+      boxShadow: {
+        normal: "0px 16px 30px -10px rgba(70, 96, 187, 0.20)",
       },
     },
   },
   plugins: [],
-  darkMode: ["class", '[data-mode="dark"]'],
+  darkMode: ["class"],
 };
 export default config;
