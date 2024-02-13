@@ -30,7 +30,7 @@ This is a web application designed for searching GitHub users and inspecting the
 ## 🟢 Live Demo
 
 <h3 align="justify">
-Access the website here: <a href="https://audiophile-commerce-murex.vercel.app/">[link]</a>
+Access the website here: <a href="https://github-serach-app.vercel.app/">[link]</a>
 </h3>
 
 ## 📚 Tech Stack
